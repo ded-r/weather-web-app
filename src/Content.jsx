@@ -66,6 +66,7 @@ function Content() {
         <>
             <SearchField onSearch={handleSearch} />
             <Weather weather={weather} />
+            <Forecast forecast={forecast} />
         </>
     );
 }
