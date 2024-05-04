@@ -1,7 +1,13 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-function SearchField({onSearch}) {
+SearchField.propTypes = {
+    data: PropTypes.string,
+};
+
+function SearchField(prop) {
     const [city, setCity] = useState("");
+    const onSearch = prop.onSearch;
     const handleSearch = () => {
         onSearch(city);
     };

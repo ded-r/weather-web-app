@@ -1,4 +1,11 @@
-function Forecast({ forecast }) {
+import PropTypes from "prop-types";
+
+Forecast.propTypes = {
+    data: PropTypes.object,
+};
+
+function Forecast(prop) {
+    const forecast = prop.forecast;
     return (
         <div className="col-start-3 col-span-8 text-center border border-primary rounded-lg shadow-xl p-5">
             <h2>Weather Forecast for 5 days</h2>
@@ -15,7 +22,7 @@ function Forecast({ forecast }) {
                         </div>
                     ))
                 ) : (
-                    <p>Loading...</p>
+                    <p>Loading forecast...</p>
                 )}
             </div>
         </div>

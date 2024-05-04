@@ -1,4 +1,11 @@
-function Weather({ weather }) {
+import PropTypes from "prop-types";
+
+Weather.propTypes = {
+    data: PropTypes.object,
+};
+
+export default function Weather(prop) {
+    const weather = prop.weather;
     return weather ? (
         <div className="col-span-4 text-center border border-primary rounded-lg shadow-xl p-5">
             <div>
@@ -26,8 +33,7 @@ function Weather({ weather }) {
         </div>
     ) : (
         <div className="col-span-4 text-center border border-primary rounded-lg shadow-xl p-5">
-            <p>Loading...</p>
+            <p>Loading weather...</p>
         </div>
     );
 }
-export default Weather;
